@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout – Trend & Tech</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="faqja-klestit.html" class="back-link">← Back to store</a>
+      <h1 class="logo">TREND <span>&</span> TECH</h1>
+      <div style="width:96px;"></div>
+    </div>
+  </header>
+
+  <main class="container checkout-page">
+    <div class="checkout-steps" id="steps">
+      <div class="step active"><span class="step-num">1</span> Shipping</div>
+      <div class="step-line"></div>
+      <div class="step"><span class="step-num">2</span> Payment</div>
+    </div>
+
+    <div class="checkout-grid">
+      <div id="formArea"></div>
+
+      <div class="order-summary" id="orderSummary"></div>
+    </div>
+
+    <div id="emptyState" class="center-message" style="display:none;">
+      <h2>Your cart is empty</h2>
+      <p>Add some items to your cart before checking out.</p>
+      <a href="faqja-klestit.html" class="btn-primary">Browse Products</a>
+    </div>
+    <div id="completeState" class="center-message" style="display:none;">
+      <div class="success-icon">✓</div>
+      <h2>Order Confirmed!</h2>
+      <p>Thank you for your purchase. We've sent a confirmation email.</p>
+      <a href="faqja-klestit.html" class="btn-primary">Continue Shopping</a>
+    </div>
+  </main>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

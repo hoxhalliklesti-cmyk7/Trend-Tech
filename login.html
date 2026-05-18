@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In – Trend & Tech</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="auth-page">
+    <div class="auth-form-side">
+      <div class="auth-form-container">
+        <a href="faqja-klestit.html" class="back-link">← Back to store</a>
+        <h1 class="logo">TREND <span>&</span> TECH</h1>
+        <p class="auth-subtitle" id="authSubtitle">Welcome back! Sign in to continue.</p>
+
+        <div class="auth-tabs">
+          <button class="auth-tab active" id="tabLogin" onclick="switchTab(true)">Sign In</button>
+          <button class="auth-tab" id="tabSignup" onclick="switchTab(false)">Sign Up</button>
+        </div>
+
+        <div class="error-message" id="errorMsg" style="display:none;"></div>
+
+        <form id="authForm" onsubmit="handleAuth(event)">
+          <div id="nameField" style="display:none;">
+            <input type="text" id="nameInput" class="search-input" placeholder="Full name" />
+          </div>
+          <input type="email" id="emailInput" class="search-input" placeholder="Email address" required />
+          <div class="password-field">
+            <input type="password" id="passwordInput" class="search-input" placeholder="Password" required />
+            <button type="button" class="toggle-password" onclick="togglePassword()">👁</button>
+          </div>
+          <div id="forgotLink" class="forgot-link"><a href="#">Forgot password?</a></div>
+          <button type="submit" class="btn-primary" style="width:100%;" id="authSubmit">Sign In</button>
+        </form>
+
+        <div class="divider"><span>or continue with</span></div>
+        <div class="social-buttons">
+          <button class="btn-secondary" onclick="alert('Google login coming soon!')">Google</button>
+          <button class="btn-secondary" onclick="alert('GitHub login coming soon!')">GitHub</button>
+        </div>
+      </div>
+    </div>
+    <div class="auth-brand-side">
+      <h2>Premium Fashion</h2>
+      <p>Discover exclusive collections from the world's most prestigious fashion brands.</p>
+    </div>
+  </div>
+
+  <script>
+    let isLogin = true;
+
+    function switchTab(login) {
+      isLogin = login;
+      document.getElementById("tabLogin").classList.toggle("active", login);
+      document.getElementById("tabSignup").classList.toggle("active", !login);
+      document.getElementById("nameField").style.display = login ? "none" : "block";
+      document.getElementById("forgotLink").style.display = login ? "block" : "none";
+      document.getElementById("authSubmit").textContent = login ? "Sign In" : "Create Account";
+      document.getElementById("authSubtitle").textContent = login
+        ? "Welcome back! Sign in to continue."
+        : "Create an account to get started.";
+      document.getElementById("errorMsg").style.display = "none";
+    }
+
+    function togglePassword() {
+      const input = document.getElementById("passwordInput");
+      input.type = input.type === "password" ? "text" : "password";
+    }
+
+    function handleAuth(e) {
+      e.preventDefault();
+      const email = document.getElementById("emailInput").value;
+      const password = document.getElementById("passwordInput").value;
+      const name = document.getElementById("nameInput").value;
+      const errorEl = document.getElementById("errorMsg");
+
+      if (!email || !password) {
+        errorEl.textContent = "Please fill in all required fields";
+        errorEl.style.display = "block";
+        return;
+      }
+      if (!isLogin && !name) {
+        errorEl.textContent = "Please enter your name";
+        errorEl.style.display = "block";
+        return;
+      }
+      if (password.length < 6) {
+        errorEl.textContent = "Password must be at least 6 characters";
+        errorEl.style.display = "block";
+        return;
+      }
+
+      alert(isLogin ? "Logged in!" : "Account created!");
+      window.location.href = "faqja-klestit.html";
+    }
+  </script>
+</body>
+</html>

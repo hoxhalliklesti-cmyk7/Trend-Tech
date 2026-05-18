@@ -1,0 +1,96 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(to right, #f5f5f5, #e8ded7);
+    color: #333;
+  }
+  
+  /* HERO SECTION */
+  .hero {
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .badge {
+    background: #ffe9db;
+    color: #ff7a00;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+    letter-spacing: 0.5px;
+  }
+  
+  .title {
+    font-family: 'Playfair Display', serif;
+    font-size: 64px;
+    font-weight: 600;
+    letter-spacing: 2px;
+  }
+  
+  .title span {
+    color: #ff7a00;
+  }
+  
+  .subtitle {
+    margin-top: 15px;
+    font-size: 16px;
+    color: #666;
+    max-width: 500px;
+    line-height: 1.6;
+  }
+  
+  .cta {
+    margin-top: 25px;
+    padding: 14px 28px;
+    border: none;
+    background: #ff7a00;
+    color: white;
+    font-size: 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease;
+  }
+  
+  .cta:hover {
+    background: #e66a00;
+    transform: translateY(-2px);
+  }
+  
+  /* FEATURES */
+  .features {
+    display: flex;
+    justify-content: space-around;
+    padding: 40px 20px;
+    background: #fff;
+    border-top: 1px solid #ddd;
+  }
+  
+  .feature {
+    text-align: center;
+    max-width: 250px;
+  }
+  
+  .icon {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  
+  .feature h3 {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .feature p {
+    font-size: 13px;
+    color: #777;
+  }

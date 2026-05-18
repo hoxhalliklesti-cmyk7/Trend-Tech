@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Trend & Tech</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="faqja-klestit.html" class="logo">TREND <span>&</span> TECH</a>
+      <div class="search-box">
+        <input type="text" id="searchInput" class="search-input" placeholder="Search clothing..." />
+      </div>
+      <div class="header-actions">
+        <a href="login.html" class="icon-btn" aria-label="Login">👤</a>
+        <button class="icon-btn cart-btn" id="cartToggle" aria-label="Cart">
+          🛒 <span class="cart-count" id="cartCount">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <h1>Premium Fashion</h1>
+    <p>Discover exclusive collections from the world's most prestigious fashion brands.</p>
+    <button class="btn-primary" onclick="document.getElementById('products').scrollIntoView({behavior:'smooth'})">Shop Now</button>
+  </section>
+
+  <section id="products" class="products-section">
+    <h2>Today's Offer</h2>
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <h3>TREND <span>&</span> TECH</h3>
+        <p>Elevate your wardrobe with our curated collection of premium fashion.</p>
+        <div class="social-links">
+          <a href="https://www.instagram.com/trendandtech.store/" target="_blank" rel="noopener noreferrer">📷</a>
+          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">🐦</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">📘</a>
+        </div>
+      </div>
+    </div>
+    <p class="copyright">© 2024 Trend & Tech. All rights reserved.</p>
+  </footer>
+
+  <div class="cart-backdrop" id="cartBackdrop"></div>
+  <div class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h2>Your Cart</h2>
+      <button id="cartClose">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-footer" id="cartFooter" style="display:none;">
+      <div class="cart-total">Total: <strong id="cartTotal">$0.00</strong></div>
+      <a href="checkout.html" class="btn-primary" style="width:100%;text-align:center;">Checkout</a>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
